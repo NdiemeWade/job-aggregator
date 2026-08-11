@@ -1,0 +1,41 @@
+# --- CORE API (REST & Documentation Automatique) ---
+
+fastapi                   # Génère la doc OpenAPI/Swagger
+uvicorn[standard]         # Serveur ASGI haute performance
+pydantic[email]           # Validation stricte des données et des emails
+python-multipart          # Permet de recevoir des formulaires/fichiers (ex: upload de CV)
+
+
+# --- DATABASE (Persistence & Schéma) ---
+
+sqlalchemy                # ORM pour manipuler la DB en Python
+psycopg2-binary           # Driver pour se connecter à PostgreSQL
+alembic                   # Gère les versions de la DB
+
+
+# --- SECURITY (Authentification & Secrets) ---
+
+python-jose[cryptography] # Gère les tokens JWT
+bcrypt==4.0.1             # Hachage sécurisé des mots de passe
+passlib[bcrypt]           # Gestionnaire de contexte pour le hachage
+python-dotenv             # Charge les clés API depuis .env
+slowapi
+
+# --- DATA INGESTION (API WeLoveDevs) ---
+
+requests                  # Client pour appeler l'API WeLoveDevs    
+pandas                    # Puissant pour nettoyer/analyser les offres
+
+
+# --- LIGHTWEIGHT AI (Modèle Local < 500Mo) ---
+
+scikit-learn              # IA ultra-légère pour classer les jobs
+spacy                     # NLP rapide pour extraire les compétences
+joblib
+
+
+# --- TESTING & CI (Qualité du Code) ---
+
+pytest                    # Lance vos tests auto
+httpx                     # Permet de simuler des appels API dans les tests
+flake8                    # Vérifie que le code respecte les normes

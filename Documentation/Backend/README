@@ -1,0 +1,64 @@
+# Backend - Job Aggregator
+
+API REST construite avec **FastAPI** + **PostgreSQL** + **SQLAlchemy ORM**.
+
+## Sommaire de la documentation
+
+| Fichier | Contenu |
+|---|---|
+| [`Api_Reference.md`](main/Api_Reference.md) | Référence complète des routes, codes HTTP, exemples |
+| [`Setup.md`](main/Setup.md) | Lancement local, variables d'environnement, tests |
+| [`Innovation_justification.md`](main/Innovation_justification.md) | Explication et justification des choix éffectués |
+
+| [`Database_Schema.md`](../database/Database_Schema.md) | Schéma relationnel documenté, contraintes d'intégrité |
+
+| [`Security.md`](services/Security.md) | Menaces identifiées, contrôles implémentés (Why/How/What) |
+
+| [`Adr_ARCHITECTURE.md`](ADR/Adr_Architecture.md) | ADR - Choix de stack, services, alternatives rejetées |
+| [`Adr_DATA.md`](ADR/Adr_Data.md) | ADR - Intégration WeLoveDevs, pipeline d'ingestion |
+| [`Adr_AI.md`](ADR/Adr_AI.md) | ADR - Modèle IA, contraintes de taille et de latence |
+| [`Adr_CI.md`](ADR/Adr_CI.md) | ADR - Pipeline GitHub Actions, checks automatisés |
+| [`Adr_Product.md`](ADR/Adr_Product.md) | ADR - utilisateurs cibles, problèmes, valeur et dashboard |
+| [`Adr_Security.md`](ADR/Adr_Security.md) | ADR - choix des contrôles et menaces adressées |
+
+| [`tests.md`](tests/tests.md) | vue d'ensemble, infrastructure, explication et setup tests |
+
+
+---
+
+## Architecture rapide
+
+```
+Apps/Backend/
+├── src/
+│   ├── main.py              # Point d'entrée FastAPI, routes /api/jobs
+│   └── services/
+│       ├── auth.py          # Router /api/auth - register/login/me
+│       ├── users.py         # Router /api/users - admin + favoris
+│       ├── models.py        # Modèles ORM SQLAlchemy
+│       ├── schemas.py       # Schémas Pydantic (validation I/O)
+│       ├── database.py      # Engine + SessionLocal + get_db()
+│       ├── security.py      # JWT, bcrypt, hash/verify
+│       ├── Collector.py     # Collecte paginée WeLoveDevs API
+│       └── Standardizer.py  # Normalisation des données brutes
+├── tests/
+│   ├── conftest.py          # Fixtures pytest, DB SQLite in-memory
+│   ├── test_api_auth.py     # Tests routes /api/auth
+│   ├── test_api_jobs.py     # Tests routes /api/jobs
+│   ├── test_api_jobs_security.py  # Rate limiting, filtres, modération
+│   └── test_standardizer.py # Tests unitaires normalisation
+├── requirements.txt
+├── Dockerfile
+└── pytest.ini
+```
+
+## Stack technique
+
+- **Runtime** : Python 3.11
+- **Framework** : FastAPI 0.100+
+- **ORM** : SQLAlchemy 2.x (select ORM, 0 injection SQL)
+- **Base de données** : PostgreSQL 15 (Docker)
+- **Auth** : JWT (python-jose) + bcrypt (passlib)
+- **Rate limiting** : slowapi (par IP)
+- **Tests** : pytest + httpx + SQLite in-memory
+- **CI** : GitHub Actions (self-hosted runner)

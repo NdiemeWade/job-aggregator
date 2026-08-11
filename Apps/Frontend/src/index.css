@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Définition des couleurs de base (Light Mode) */
+:root {
+    --base-carbon: #1f1b1c;
+    --base-snow: #fcf8f7;
+    --base-coral: #fc8865;
+}
+
+/* Inversion automatique quand le ThemeProvider ajoute la classe "dark" */
+html.dark {
+    --base-carbon: #fcf8f7;
+    --base-snow: #1f1b1c;
+}
+
+@theme {
+    --color-carbon: var(--base-carbon);
+    --color-coral: var(--base-coral);
+    --color-snow: var(--base-snow);
+
+    --font-titre: 'PoliceTitre', sans-serif;
+}

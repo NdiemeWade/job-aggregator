@@ -1,0 +1,60 @@
+text,category
+"React frontend developer",frontend
+"Vue.js frontend engineer",frontend
+"Angular frontend developer",frontend
+"Next.js developer building web interfaces",frontend
+"Frontend engineer using React and TypeScript",frontend
+"UI developer specializing in web applications",frontend
+"JavaScript UI developer",frontend
+"Web developer focusing on frontend",frontend
+"Junior React Developer",frontend
+"Senior UI/UX developer",frontend
+"Front end specialist",frontend
+
+"Node.js backend developer",backend
+"Backend engineer using Django and PostgreSQL",backend
+"FastAPI backend developer building REST APIs",backend
+"Flask API developer",backend
+"Backend engineer designing microservices",backend
+"Python backend developer with REST API experience",backend
+"Java Spring Boot developer",backend
+"PHP Symfony backend developer",backend
+"SQL database engineer",backend
+"Go language backend specialist",backend
+"Ruby on Rails developer",backend
+
+"DevOps engineer using Docker and Kubernetes",devops
+"Cloud engineer working with AWS and CI/CD pipelines",devops
+"DevOps specialist managing infrastructure automation",devops
+"Site Reliability Engineer",devops
+"Platform engineer for scalable systems",devops
+"DevOps Cloud specialist",devops
+"Automation engineer with Jenkins",devops
+"Infrastructure as code specialist using Terraform",devops
+"Linux systems administrator",devops
+"Cybersecurity and infrastructure engineer",devops
+"Cloud Architect",devops
+
+"Data analyst using Python and Pandas",data
+"Machine learning engineer using scikit-learn",data
+"Data scientist working with AI models and datasets",data
+"AI engineer building predictive models with Python",data
+"Big Data engineer with Spark",data
+"Business Intelligence developer",data
+"Data engineer building ETL pipelines",data
+"Quantitative analyst Quant",data
+"Computer vision engineer",data
+"NLP specialist with Python",data
+"Data architect",data
+
+"Fullstack developer using React and Node.js",fullstack
+"Fullstack engineer working with Django and React",fullstack
+"Web developer handling both frontend and backend",fullstack
+"Full Stack Tech Lead",fullstack
+"Tech Lead Full Stack",fullstack
+"Tech Lead - Full Stack Web",fullstack
+"Lead Fullstack Developer",fullstack
+"Lead Software Engineer Fullstack",fullstack
+"Senior Full Stack Developer",fullstack
+"Développeur Fullstack",fullstack
+"Fullstack Software Engineer Saas",fullstack
